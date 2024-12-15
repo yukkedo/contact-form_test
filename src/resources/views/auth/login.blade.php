@@ -16,7 +16,7 @@
             <a class="header__logo" href="/">
                 FashionablyLate
             </a>
-            <button class="header__button">register</button>
+            <a class="header__button" href="/auth/register">register</a>
         </div>
     </header>
 
@@ -27,15 +27,16 @@
                 <h2 class="login__header--item">Login</h2>
             </div>
 
-            <form action="" class="login-form">
+            <form class="login-form" action="/auth/login" method="post">
+                @csrf
                 <div class="login__group">
                     <p class="login__group-title">メールアドレス
                     </p>
-                    <input type="email" name="email" class="login__group-input" placeholder="例:text@exanple.com">
+                    <input class="login__group-input" type="email" name="email" value="{{ old('email') }}" placeholder="例:text@exanple.com">
                 </div>
                 <div class="login__group">
                     <p class="login__group-title">パスワード</p>
-                    <input type="password" name="password" class="login__group-input" placeholder="例:coachtech1106">
+                    <input class="login__group-input" type="password" name="password" placeholder="例:coachtech1106">
                 </div>
 
                 <div class="login__group-submit">

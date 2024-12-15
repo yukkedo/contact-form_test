@@ -19,17 +19,19 @@
 .header__button {
     display: inline-block;
     color: #bcb0b0;
+    background-color: #f5f6f6;
     font-family: Georgia;
     font-size: 15px;
     height: 25px;
+    line-height: 15px;
     border: 1px solid #bcb0b0;
-    padding: 5px 15px;
+    text-decoration: none;
+    padding: 5px 20px;
     position: absolute;
     right: 0;
     margin: 10px 50px;
     cursor: pointer;
 }
-
 
 body {
     background-color: #F2ECE7;

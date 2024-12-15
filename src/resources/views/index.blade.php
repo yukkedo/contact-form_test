@@ -12,7 +12,8 @@
     </div>
 
     <!-- お問い合わせ内容 -->
-    <form class="form__items">
+    <form class="form__items" action="/confirm" method="post">
+        @csrf
         <div class="form__group">
             <div class="form__group--title">
                 <span class="form__label-item">お名前</span>
@@ -20,11 +21,16 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <input class="input-name" type="text" name="first-name" placeholder="例:山田">
-                    <input class="input-name" type="text" name="last-name" placeholder="例:太郎">
+                    <input class="input-name" type="text" name="first-name" placeholder="例:山田" value="{{ old('first-name') }}">
+                    <input class="input-name" type="text" name="last-name" placeholder="例:太郎" value="{{ old('last-name') }}">
                 </div>
                 <div class="form__error">
-
+                    @error('first-name')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
+                    @error('last-name')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -35,15 +41,17 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <input class="input-gender" type="radio" name="gender" value="男性">
+                    <input class="input-gender" type="radio" name="gender" value="男性" checked>
                     <label for="">男性</label>
                     <input class="input-gender" type="radio" name="gender" value="女性">
                     <label for="">女性</label>
                     <input class="input-gender" type="radio" name="gender" value="その他">
                     <label for="">その他</label>
-                    <div class="form__error">
-
-                    </div>
+                </div>
+                <div class="form__error">
+                    @error('gender')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -54,10 +62,12 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <input class="input-email" type="email" name="email" placeholder="例:test@example.com">
+                    <input class="input-email" type="email" name="email" placeholder="例:test@example.com" value="{{ old('email') }}">
                 </div>
                 <div class="form__error">
-
+                    @error('email')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -73,7 +83,15 @@
                     <input class="input-tel" type="tel" name="tel3" placeholder="5678">
                 </div>
                 <div class="form__error">
-
+                    @error('tel1')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
+                    @error('tel2')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
+                    @error('tel3')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -84,10 +102,12 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <input class="input-adress" type="text" name="adress" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3">
+                    <input class="input-adress" type="text" name="address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}">
                 </div>
                 <div class="form__error">
-
+                    @error('address')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -97,10 +117,7 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <input class="input-building" type="text" name="building" placeholder="千駄ヶ谷マンション101号室">
-                </div>
-                <div class="form__error">
-
+                    <input class="input-building" type="text" name="building" placeholder="例:千駄ヶ谷マンション101号室" value="{{ old('building') }}">
                 </div>
             </div>
         </div>
@@ -111,12 +128,17 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <select class="select" name="category" id="">
-                        <option value="1"></option>
+                    <select class="select" name="category_id" id="category_id" value="{{ old('category_name') }}">
+                        <option value="" selected>選択してください</option>
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->content}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form__error">
-
+                    @error('category_id')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -127,10 +149,12 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <textarea class="textarea" name="content" id="" placeholder="お問い合わせ内容をご記載ください"></textarea>
+                    <textarea class="textarea" name="detail" id="" placeholder="お問い合わせ内容をご記載ください" value="{{ old('detail') }}"></textarea>
                 </div>
                 <div class="form__error">
-
+                    @error('detail')
+                    <div class="form__error-message">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
         </div>

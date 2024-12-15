@@ -38,11 +38,18 @@
 .form__group--content {
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .form__input--text {
+    display: flex;
     width: 90%;
+}
+
+.form__error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
 }
 
 .input-name {

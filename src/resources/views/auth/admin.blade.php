@@ -25,7 +25,7 @@
         <div class="admin">
             <div class="admin__header">
                 <h2 class="admin__header--title">Admin</h2>
-                <form class="admin__header--items">
+                <form class="admin__header--items" action="/auth/admin" method="get">
                     <input class="items-content" type="text" placeholder="名前やメールアドレスを入力してください">
                     <select class="items-gender" name="gender" id="" value>
                         <option value="" selected>性別</option>
