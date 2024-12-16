@@ -1,0 +1,65 @@
+.pagination {
+    display: flex;
+    /* 横並びにする */
+    justify-content: center;
+    /* 水平方向に中央揃え */
+    align-content: center;
+    list-style: none;
+    /* デフォルトの箇条書きスタイルを削除 */
+    padding: 0;
+    /* 不要な余白を削除 */
+    margin-bottom: 15px;
+    /* 上下に余白を追加 */
+}
+
+/* ページリンク（すべてのリンク）の共通スタイル */
+.pagination a,
+.pagination span {
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    color: #82766A;
+    font-size: 15x;
+    transition: background-color 0.3s ease;
+    border-radius: 0; /* 初期状態で角丸を無効化 */
+}
+
+/* 左側（＜ボタン）のみ左上・左下を丸く */
+.pagination li:first-child .page-link {
+    border-radius: 5px 0 0 5px;
+    /* 左上と左下を丸く */
+}
+
+/* 右側（＞ボタン）のみ右上・右下を丸く */
+.pagination li:last-child .page-link {
+    border-radius: 0 5px 5px 0;
+    /* 右上と右下を丸く */
+}
+
+/* その他のページ番号リンクは四角形を保つ */
+.pagination li .page-link {
+    border-radius: 0;
+    /* 角丸を無効化 */
+}
+
+/* ホバー時のスタイル（全体共通） */
+.pagination a:hover {
+    background-color: #F5F5F5;
+    /* 背景色を変更 */
+    color: #82766A;
+}
+
+/* 現在のページ（アクティブ）のスタイル */
+.pagination .active span {
+    background-color: #82766A;
+    color: white;
+    border-color: #82766A;
+}
+
+/* 無効なリンク（例: 戻れない場合）のスタイル */
+.pagination .disabled span {
+    color: #ccc;
+    background-color: #f9f9f9;
+    border-color: #ddd;
+    cursor: not-allowed;
+}

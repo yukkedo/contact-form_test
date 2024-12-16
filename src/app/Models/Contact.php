@@ -26,4 +26,10 @@ class Contact extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    // public function getGenderLabelAttribute()
+    // {
+    //     $gender_labels = [1 => '男性', 2 => '女性', 3 => 'その他'];
+    //     return $gender_labels[$this->gender] ?? '不明';
+    // }
 }

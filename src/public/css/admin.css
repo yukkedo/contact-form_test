@@ -112,6 +112,12 @@
     width: 100%;
 }
 
+.user-list__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .export-button {
     width: 130px;
     height: 30px;
@@ -125,6 +131,7 @@
     width: 100%;
     font-size: 15px;
     border: 1px solid #bcb0b0;
+    margin-bottom: 30px;
 }
 
 .table-row {

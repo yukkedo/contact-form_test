@@ -62,11 +62,13 @@ body {
     width: 60%;
     height: 400px;
     margin: 0 auto;
-    padding: 40px 30px
+    padding: 40px 30px;
+    position: relative;
 }
 
 .info__group {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    position: relative;
 }
 
 .info__group-title {
@@ -102,8 +104,9 @@ body {
 
 .error-message {
     display: block;
-    font-size: 10px;
+    font-size: 12px;
     color: red;
     width: 60%;
-    margin: 0 auto;
+    margin: 10px 20% 0;
+    position: absolute;
 }
