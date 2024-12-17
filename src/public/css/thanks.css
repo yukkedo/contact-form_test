@@ -39,7 +39,7 @@
 }
 
 .thanks__button--submit {
-    padding: 10px;
+    padding: 10px 25px;
     width: 100px;
     height: 40px;
     background-color: #82766A;
@@ -47,4 +47,5 @@
     cursor: pointer;
     color: #fff;
     font-size: 15px;
+    text-decoration: none;
 }

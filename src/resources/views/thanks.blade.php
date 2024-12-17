@@ -21,9 +21,9 @@
                     <h2>お問い合わせありがとうございました</h2>
                 </div>
                 <div class="thanks__button">
-                    <button class="thanks__button--submit" type="submit">
-                    HOME
-                    </button>
+                    <a class="thanks__button--submit" href="/">
+                        HOME
+                    </a>
                 </div>
             </div>
         </div>

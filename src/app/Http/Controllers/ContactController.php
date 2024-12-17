@@ -12,13 +12,13 @@ class ContactController extends Controller
     public function index()
     {
         $categories = category::all();
-
         return view('index', compact('categories'));
     }
 
     public function confirm(ContactRequest $request)
     {
         $contact = $request->all();
+        session()->put('contact', $contact);
         // Categoriesテーブルをcontentで表示
         $category = Category::find($contact['category_id']);
         $contact['category_name'] = $category ? $category->content : '未選択';
@@ -31,20 +31,11 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
-        $contact = $request->only([
-            'first-name',
-            'last-name',
-            'gender',
-            'email',
-            'tel',
-            'address',
-            'building',
-            'category_id',
-            'detail'
-        ]);
-        dd($contact);
+        $contact = session()->get('contact');
 
         Contact::create($contact);
+
+        session()->forget('contact');
         return redirect()->route('thanks'); 
     }
 

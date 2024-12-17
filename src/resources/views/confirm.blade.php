@@ -13,7 +13,7 @@
 
     <!-- 確認内容 -->
     <form class="form" action="/contacts" method="post">
-        @csrf
+    @csrf
         <div class="confirm__table">
             <table class="confirm__contents">
                 <tr class="contents__row">

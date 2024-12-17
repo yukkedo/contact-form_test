@@ -128,7 +128,7 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <select class="select" name="category_id" id="category_id" value="{{ old('category_name') }}">
+                    <select class="select" name="category_id" id="category_id">
                         <option value="" selected>選択してください</option>
                         @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->content}}</option>
@@ -149,7 +149,7 @@
             </div>
             <div class="form__group--content">
                 <div class="form__input--text">
-                    <textarea class="textarea" name="detail" id="" placeholder="お問い合わせ内容をご記載ください" value="{{ old('detail') }}"></textarea>
+                    <textarea class="textarea" name="detail" id="" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                 </div>
                 <div class="form__error">
                     @error('detail')
